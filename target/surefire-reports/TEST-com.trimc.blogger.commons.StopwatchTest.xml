@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.trimc.blogger.commons.StopwatchTest" time="0.545" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.trimc.blogger.commons.StopwatchTest" time="0.532" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="c:\Progra~1\Java\jdk1.8.0_20\jre\bin"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="c:\Backup\Java\workspaces\public\java\java-commons"/>
+    <property name="user.dir" value="c:\Backup\Java\workspaces\public\java-commons"/>
     <property name="java.runtime.version" value="1.8.0_20-b26"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="c:\Progra~1\Java\jdk1.8.0_20\jre\lib\endorsed"/>
@@ -62,5 +62,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.trimc.blogger.commons.StopwatchTest" name="run" time="0.545"/>
+  <testcase classname="com.trimc.blogger.commons.StopwatchTest" name="run" time="0.532"/>
 </testsuite>

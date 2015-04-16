@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="c:\Backup\Java\workspaces\public\java\java-commons"/>
+    <property name="user.dir" value="c:\Backup\Java\workspaces\public\java-commons"/>
     <property name="java.runtime.version" value="1.8.0_20-b26"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="c:\Progra~1\Java\jdk1.8.0_20\jre\lib\endorsed"/>
