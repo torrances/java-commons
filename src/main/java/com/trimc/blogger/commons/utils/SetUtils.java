@@ -30,7 +30,7 @@ public final class SetUtils {
 
 		return false;
 	}
-
+	
 	public static boolean memberOfCaseInsensitive(String value, Collection<String> tokens) {
 		return memberOfCaseInsensitive(value, toArray(tokens));
 	}
@@ -55,6 +55,16 @@ public final class SetUtils {
 			universal.addAll(set);
 
 		return universal;
+	}
+
+	public static Collection<String> reverse(Collection<String> set) {
+		List<String> list = new ArrayList<String>();
+
+		String[] values = (String[]) set.toArray(new String[set.size()]);
+		for (int i = values.length - 1; i >= 0; i--)
+			list.add(values[i]);
+
+		return list;
 	}
 
 	public static String[] toArray(Collection<String> collection) {
