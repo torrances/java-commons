@@ -27,6 +27,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.apache.xml.serialize.OutputFormat;
+import org.apache.xml.serialize.XMLSerializer;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -36,8 +38,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
-import org.apache.xml.serialize.OutputFormat;
-import org.apache.xml.serialize.XMLSerializer;
 import com.trimc.blogger.commons.LogManager;
 import com.trimc.blogger.commons.exception.BusinessException;
 import com.trimc.blogger.commons.type.Codepage;
@@ -46,12 +46,14 @@ import com.trimc.blogger.commons.utils.StringUtils;
 @SuppressWarnings("deprecation")
 public class DomUtils {
 
-	public static LogManager		logger		= new LogManager(DomUtils.class);
+	public static LogManager logger = new LogManager(DomUtils.class);
 
-	public static final String[]	NAMESPACES	= { "<?xml version=\"1.0\" encoding=\"UTF-8\"?>", "<?xml version=\"1.1\" encoding=\"UTF-16\"?>" };
+	public static final String[] NAMESPACES = { "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<?xml version=\"1.1\" encoding=\"UTF-16\"?>" };
 
 	public static String cleanse(String line) {
-		if (!StringUtils.hasValue(line)) return line;
+		if (!StringUtils.hasValue(line))
+			return line;
 
 		line = StringUtils.cleanseAmpersands(line);
 		line = line.replaceAll("\\&#160;", ""); // non-breaking space
@@ -165,7 +167,8 @@ public class DomUtils {
 
 	public static void detachFromParent(Element el) {
 		Node parent = el.getParentNode();
-		if (null != parent) parent.removeChild(el);
+		if (null != parent)
+			parent.removeChild(el);
 	}
 
 	public static void detachFromParent(Element... elements) {
@@ -229,7 +232,8 @@ public class DomUtils {
 	}
 
 	public static Element[] getChildElements(Element source, String name) {
-		if (null == source) return null;
+		if (null == source)
+			return null;
 
 		List<Node> list = new ArrayList<Node>();
 		NodeList children = source.getChildNodes();
@@ -272,7 +276,8 @@ public class DomUtils {
 	}
 
 	public static Element getFirstDescendantOrSelfElement(Document dom, String name) {
-		if (null == dom) return null;
+		if (null == dom)
+			return null;
 
 		return getFirstDescendantOrSelfElement(dom.getDocumentElement(), name);
 	}
@@ -282,7 +287,8 @@ public class DomUtils {
 	}
 
 	public static Element getFirstDescendantOrSelfElement(Element el, String... names) {
-		if (null == el) return null;
+		if (null == el)
+			return null;
 
 		Element result = null;
 		if (testElement(el, names)) {
@@ -322,7 +328,8 @@ public class DomUtils {
 
 	public static short getNodeType(Node node) {
 		short result = 0;
-		if (null != node) result = node.getNodeType();
+		if (null != node)
+			result = node.getNodeType();
 
 		return result;
 	}
@@ -343,7 +350,8 @@ public class DomUtils {
 
 	public static boolean testElement(Element elem, String name) {
 		boolean result = false;
-		if (null != elem) result = elem.getNodeName().compareTo(name) == 0;
+		if (null != elem)
+			result = elem.getNodeName().compareTo(name) == 0;
 
 		return result;
 	}
@@ -389,11 +397,13 @@ public class DomUtils {
 			logger.error(e);
 		}
 
-		if (useNamespace) return sb.toString();
+		if (useNamespace)
+			return sb.toString();
 
 		String buffer = sb.toString();
 		for (String ns : NAMESPACES)
-			if (buffer.contains(ns)) return StringUtils.substringAfter(buffer, ns);
+			if (buffer.contains(ns))
+				return StringUtils.substringAfter(buffer, ns);
 
 		return buffer;
 	}
