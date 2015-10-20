@@ -237,7 +237,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 			sb.append(tokens[i] + " ");
 
 			if (total >= length) {
-				list.add(sb.toString().trim());
+				list.add(trim(sb.toString()));
 				sb = new StringBuilder();
 				total = 0;
 			}
