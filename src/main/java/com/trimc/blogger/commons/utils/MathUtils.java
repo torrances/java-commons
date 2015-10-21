@@ -8,7 +8,7 @@ import org.junit.Test;
 public final class MathUtils {
 
 	/* maximum precision for a BigDecimal */
-	public static final Integer	BD_DISPLAY_MAX	= 10;
+	public static final Integer BD_DISPLAY_MAX = 10;
 
 	public static String format(BigDecimal bd) {
 		return format(bd, BD_DISPLAY_MAX);

@@ -12,21 +12,21 @@ import com.trimc.blogger.commons.utils.string.StringUtils;
 
 public class TextUtils {
 
-	public static final String[]	ALPHA				= new String[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+	public static final String[] ALPHA = new String[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
 
-	public static final char[]		ALPHA_CHARS_LOWER	= new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+	public static final char[] ALPHA_CHARS_LOWER = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
-	public static final char[]		ALPHA_CHARS_UPPER	= new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+	public static final char[] ALPHA_CHARS_UPPER = new char[] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
 
-	public static final String[]	ALPHA_LOWER			= new String[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+	public static final String[] ALPHA_LOWER = new String[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
 
-	public static final String[]	NUMBERS				= new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+	public static final String[] NUMBERS = new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
-	public static final char[]		NUMBERS_CHARS		= new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+	public static final char[] NUMBERS_CHARS = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-	public static final String[]	PUNCTUATION			= new String[] { " ", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "\\\\", "|", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?", "~", "`" };
+	public static final String[] PUNCTUATION = new String[] { " ", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "\\\\", "|", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?", "~", "`" };
 
-	public static final char[]		PUNCTUATION_CHARS	= new char[] { ' ', '"', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', '{', ']', '}', '|', ';', ':', '\'', ',', '<', '.', '>', '/', '?', '~', '`', '?' };
+	public static final char[] PUNCTUATION_CHARS = new char[] { ' ', '"', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', '{', ']', '}', '|', ';', ':', '\'', ',', '<', '.', '>', '/', '?', '~', '`', '?' };
 
 	public static boolean containsAlpha(String value) {
 		for (char ch : value.toCharArray())
@@ -246,7 +246,7 @@ public class TextUtils {
 
 		return isOther && isAlpha;
 	}
-	
+
 	/** TODO: add textutils tests ... */
 
 	public static boolean isAlphaPunctuation(String value) {

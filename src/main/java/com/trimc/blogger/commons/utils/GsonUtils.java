@@ -3,7 +3,6 @@ package com.trimc.blogger.commons.utils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-
 public final class GsonUtils {
 
 	public static String toJsonFormatted(Object obj) {

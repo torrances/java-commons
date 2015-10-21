@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 
 public class LogManager {
 
-	private Logger	logger;
+	private Logger logger;
 
 	public LogManager(Class<?> clazz) {
 		setLogger(Logger.getLogger(clazz));

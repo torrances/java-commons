@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public final class TurtleUtils {
 
-	public static final String	TYPE_VALUE_TEMPLATE	= ":%s\n\trdf:type :%s ;\n\trdfs:label \"%s\"^^xsd:string .";
+	public static final String TYPE_VALUE_TEMPLATE = ":%s\n\trdf:type :%s ;\n\trdfs:label \"%s\"^^xsd:string .";
 
 	public static String toTtl(String type, Collection<String> values) {
 		StringBuilder sb = new StringBuilder();

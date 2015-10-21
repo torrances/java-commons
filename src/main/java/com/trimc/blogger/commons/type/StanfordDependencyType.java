@@ -219,7 +219,7 @@ public enum StanfordDependencyType {
 
 	XSUBJ("xsubj", "controlling subject", false, UpperDependencyType.OTHER, "A controlling subject is the relation between the head of a open clausal complement (xcomp) and the external subject of that clause.");
 
-	public static LogManager	logger	= new LogManager(StanfordDependencyType.class);
+	public static LogManager logger = new LogManager(StanfordDependencyType.class);
 
 	public static StanfordDependencyType find(String name) {
 		if (!StringUtils.hasValue(name)) return null;
@@ -240,15 +240,15 @@ public enum StanfordDependencyType {
 		return null;
 	}
 
-	private String				description;
+	private String description;
 
-	private boolean				isCollapsed;
+	private boolean isCollapsed;
 
-	private String				longName;
+	private String longName;
 
-	private String				shortName;
+	private String shortName;
 
-	private UpperDependencyType	upperType;
+	private UpperDependencyType upperType;
 
 	StanfordDependencyType(String aShortName, String aLongName, boolean isCollapsed, UpperDependencyType upperType, String description) {
 		setShortName(aShortName);

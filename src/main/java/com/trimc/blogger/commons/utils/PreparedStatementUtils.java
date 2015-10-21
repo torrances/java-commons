@@ -13,7 +13,7 @@ import com.trimc.blogger.commons.LogManager;
  */
 public class PreparedStatementUtils {
 
-	public static LogManager	logger	= new LogManager(PreparedStatementUtils.class);
+	public static LogManager logger = new LogManager(PreparedStatementUtils.class);
 
 	public static void handle(PreparedStatement insert, Connection con) {
 		try {

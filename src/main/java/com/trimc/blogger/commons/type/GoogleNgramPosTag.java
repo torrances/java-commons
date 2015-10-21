@@ -71,7 +71,7 @@ public enum GoogleNgramPosTag {
 
 	/*17*/VERB("VERB", EngGrammarUpperType.VERB);
 
-	public static LogManager	logger	= new LogManager(GoogleNgramPosTag.class);
+	public static LogManager logger = new LogManager(GoogleNgramPosTag.class);
 
 	public static GoogleNgramPosTag find(String tag) {
 
@@ -96,9 +96,9 @@ public enum GoogleNgramPosTag {
 		return null;
 	}
 
-	private EngGrammarUpperType	engGrammarUpperType;
+	private EngGrammarUpperType engGrammarUpperType;
 
-	private String				name;
+	private String name;
 
 	private GoogleNgramPosTag(String name, EngGrammarUpperType engGrammarUpperType) {
 		setName(name);

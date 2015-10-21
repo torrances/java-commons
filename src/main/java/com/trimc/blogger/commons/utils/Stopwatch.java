@@ -5,25 +5,25 @@ import com.trimc.blogger.commons.utils.string.StringUtils;
 
 public class Stopwatch {
 
-	public static LogManager	logger		= new LogManager(Stopwatch.class);
+	public static LogManager logger = new LogManager(Stopwatch.class);
 
-	public static final Long	MILLISECOND	= 1L;
+	public static final Long MILLISECOND = 1L;
 
-	public static final Long	SECOND		= MILLISECOND * 1000;
+	public static final Long SECOND = MILLISECOND * 1000;
 
-	public static final Long	MINUTE		= SECOND * 60;
+	public static final Long MINUTE = SECOND * 60;
 
-	public static final Long	HOUR		= MINUTE * 60;
+	public static final Long HOUR = MINUTE * 60;
 
-	public static final Long	DAY			= HOUR * 24;
+	public static final Long DAY = HOUR * 24;
 
-	public static final Long	WEEK		= DAY * 7;
+	public static final Long WEEK = DAY * 7;
 
-	public static final Long	YEAR		= WEEK * 52;
+	public static final Long YEAR = WEEK * 52;
 
-	private Long				end;
+	private Long end;
 
-	private Long				start;
+	private Long start;
 
 	public Stopwatch() {
 		setStart(System.currentTimeMillis());

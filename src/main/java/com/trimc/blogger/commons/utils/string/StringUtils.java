@@ -21,8 +21,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	public static LogManager logger = new LogManager(StringUtils.class);
 
 	public static String cleanseAmpersands(String input) {
-		if (!StringUtils.hasValue(input))
-			return input;
+		if (!StringUtils.hasValue(input)) return input;
 
 		input = input.replaceAll("&amp;", "&");
 		input = input.replaceAll("&", "&amp;");
@@ -193,8 +192,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		Iterator<?> iter = collection.iterator();
 		while (iter.hasNext()) {
 			sb.append(iter.next());
-			if (iter.hasNext())
-				sb.append(delimiter);
+			if (iter.hasNext()) sb.append(delimiter);
 		}
 
 		return sb.toString();

@@ -56,7 +56,7 @@ public enum Codepage {
 	 * avoid generating these characters in ISO-8859-1 labeled content. */
 	WINDOWS_1252("Windows-1252");
 
-	public static LogManager	logger	= new LogManager(Codepage.class);
+	public static LogManager logger = new LogManager(Codepage.class);
 
 	public static Codepage find(String name) {
 		for (Codepage value : Codepage.values())
@@ -66,7 +66,7 @@ public enum Codepage {
 		return null;
 	}
 
-	private String	name;
+	private String name;
 
 	private Codepage(String name) {
 		setName(name);
@@ -80,7 +80,8 @@ public enum Codepage {
 		this.name = name;
 	}
 
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		return getName();
 	}
 }

@@ -16,13 +16,13 @@ import com.trimc.blogger.commons.exception.BusinessException;
 
 public class Xpath {
 
-	public static LogManager	logger	= new LogManager(Xpath.class);
+	public static LogManager logger = new LogManager(Xpath.class);
 
-	private Document			dom;
+	private Document dom;
 
-	private Element				element;
+	private Element element;
 
-	private NodeList			nodeList;
+	private NodeList nodeList;
 
 	public Xpath(Document dom) {
 		setDom(dom);

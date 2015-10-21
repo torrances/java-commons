@@ -10,7 +10,7 @@ import com.trimc.blogger.commons.utils.string.StringUtils;
 
 public final class LogUtils {
 
-	public static LogManager	logger	= new LogManager(LogUtils.class);
+	public static LogManager logger = new LogManager(LogUtils.class);
 
 	public static String toLogString(Object obj) {
 		StringBuilder sb = new StringBuilder();

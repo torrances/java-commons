@@ -8,17 +8,17 @@ import org.w3c.dom.Element;
 
 public class DomIterator implements Iterator<Element> {
 
-	int						_count		= 0;
+	int _count = 0;
 
-	private Element			_current	= null;
+	private Element _current = null;
 
-	private Document		_dom		= null;
+	private Document _dom = null;
 
-	private String[]		_names		= null;
+	private String[] _names = null;
 
-	private Element			_next		= null;
+	private Element _next = null;
 
-	private Stack<Element>	_stack		= new Stack<Element>();
+	private Stack<Element> _stack = new Stack<Element>();
 
 	public DomIterator(Document dom) {
 		_dom = dom;
@@ -91,11 +91,13 @@ public class DomIterator implements Iterator<Element> {
 		return next;
 	}
 
-	@Override public boolean hasNext() {
+	@Override
+	public boolean hasNext() {
 		return _current != null;
 	}
 
-	@Override public Element next() {
+	@Override
+	public Element next() {
 		Element result = _current;
 		_current = _next;
 		_next = getNextElementNamed(_current);
@@ -103,7 +105,8 @@ public class DomIterator implements Iterator<Element> {
 		return result;
 	}
 
-	@Override public void remove() {
+	@Override
+	public void remove() {
 		DomUtils.detachFromParent(_current);
 	}
 }

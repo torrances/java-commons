@@ -15,20 +15,22 @@ public class CollectionUtils {
 
 		return reversed;
 	}
-	
+
 	public static Collection<String> toLowerCase(Collection<String> collection) {
 		List<String> master = new ArrayList<String>();
-		
-		for (String value : collection) master.add(value.toLowerCase());
-		
+
+		for (String value : collection)
+			master.add(value.toLowerCase());
+
 		return master;
 	}
 
 	public static Collection<String> toUpperCase(Collection<String> collection) {
 		List<String> master = new ArrayList<String>();
-		
-		for (String value : collection) master.add(value.toUpperCase());
-		
+
+		for (String value : collection)
+			master.add(value.toUpperCase());
+
 		return master;
 	}
 

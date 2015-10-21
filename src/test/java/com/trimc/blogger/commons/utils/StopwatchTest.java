@@ -10,9 +10,9 @@ import com.trimc.blogger.commons.utils.Stopwatch;
 
 public final class StopwatchTest {
 
-	public static LogManager	logger		= new LogManager(StopwatchTest.class);
+	public static LogManager logger = new LogManager(StopwatchTest.class);
 
-	private static final int	THRESHOLD	= 500;
+	private static final int THRESHOLD = 500;
 
 	@Test
 	public void run() throws Throwable {

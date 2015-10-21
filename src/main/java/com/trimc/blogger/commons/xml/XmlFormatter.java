@@ -26,7 +26,7 @@ import com.trimc.blogger.commons.utils.string.StringUtils;
 @SuppressWarnings("deprecation")
 public class XmlFormatter {
 
-	public static LogManager	logger	= new LogManager(XmlFormatter.class);
+	public static LogManager logger = new LogManager(XmlFormatter.class);
 
 	private static String cleanse(String input) {
 

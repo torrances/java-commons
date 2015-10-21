@@ -22,19 +22,15 @@ public class StringUtils$Format {
 
 	protected static String formatPct(String value) {
 
-		if ("0".equals(value))
-			return "0";
-		else if ("1".equals(value))
-			return "100";
+		if ("0".equals(value)) return "0";
+		else if ("1".equals(value)) return "100";
 
 		if (value.startsWith("0.")) {
 			value = StringUtils.substringAfter(value, "0.");
 
 			if (value.length() < 2) {
-				if (1 == value.length())
-					value = value.concat("0.00");
-				else
-					value = value.concat(".00");
+				if (1 == value.length()) value = value.concat("0.00");
+				else value = value.concat(".00");
 			}
 
 			else {

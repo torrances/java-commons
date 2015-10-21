@@ -15,15 +15,10 @@ public final class EngGrammarUpperTypeAdapter {
 	public static EngGrammarUpperType findByAbbreviation(String tag) throws AdapterValidationException {
 		tag = tag.toLowerCase();
 
-		if ("n".equals(tag))
-			return EngGrammarUpperType.NOUN;
-		if ("n.".equals(tag))
-			return EngGrammarUpperType.NOUN;
-		if ("n.2".equals(tag))
-			return EngGrammarUpperType.NOUN;
-		else if ("v".equals(tag))
-			return EngGrammarUpperType.VERB;
-		
+		if ("n".equals(tag)) return EngGrammarUpperType.NOUN;
+		if ("n.".equals(tag)) return EngGrammarUpperType.NOUN;
+		if ("n.2".equals(tag)) return EngGrammarUpperType.NOUN;
+		else if ("v".equals(tag)) return EngGrammarUpperType.VERB;
 
 		throw new AdapterValidationException("Unrecognized Abbreviation (tag = %s)", tag);
 	}
@@ -34,8 +29,7 @@ public final class EngGrammarUpperTypeAdapter {
 		Iterator<EngGrammarUpperType> iter = engGrammarUpperTypes.iterator();
 		while (iter.hasNext()) {
 			sb.append(iter.next().toString());
-			if (iter.hasNext())
-				sb.append(", ");
+			if (iter.hasNext()) sb.append(", ");
 		}
 
 		return sb.toString();

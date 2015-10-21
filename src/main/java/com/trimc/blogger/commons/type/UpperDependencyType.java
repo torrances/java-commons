@@ -36,7 +36,7 @@ public enum UpperDependencyType {
 
 	VERB("Verb");
 
-	public static LogManager	logger	= new LogManager(UpperDependencyType.class);
+	public static LogManager logger = new LogManager(UpperDependencyType.class);
 
 	public static UpperDependencyType find(String name) {
 		for (UpperDependencyType value : UpperDependencyType.values()) {
@@ -49,7 +49,7 @@ public enum UpperDependencyType {
 		return null;
 	}
 
-	private String	name;
+	private String name;
 
 	private UpperDependencyType(String name) {
 		setName(name);

@@ -32,7 +32,7 @@ public final class SetUtils {
 
 		return false;
 	}
-	
+
 	public static boolean memberOfCaseInsensitive(String value, Collection<String> tokens) {
 		return memberOfCaseInsensitive(value, toArray(tokens));
 	}

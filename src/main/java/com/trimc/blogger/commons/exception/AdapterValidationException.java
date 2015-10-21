@@ -4,13 +4,13 @@ import com.trimc.blogger.commons.LogManager;
 
 public class AdapterValidationException extends BusinessException {
 
-	static LogManager			logger				= new LogManager(AdapterValidationException.class);
+	static LogManager logger = new LogManager(AdapterValidationException.class);
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long serialVersionUID = 1L;
 
-	private String				message;
+	private String message;
 
-	private Object[]			params;
+	private Object[] params;
 
 	public AdapterValidationException(Exception e) {
 		super(e);

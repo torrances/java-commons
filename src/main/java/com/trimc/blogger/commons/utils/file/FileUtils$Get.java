@@ -32,23 +32,19 @@ public class FileUtils$Get {
 		return files;
 	}
 
-	private static void getFiles(File parentFile, ArrayList<File> files, String fileExtension, String folder)
-			throws Exception {
+	private static void getFiles(File parentFile, ArrayList<File> files, String fileExtension, String folder) throws Exception {
 		File[] fileList = parentFile.listFiles();
-		if (null == fileList)
-			return;
+		if (null == fileList) return;
 
 		for (int p = 0; p < fileList.length; p++) {
 
 			if (fileList[p].isDirectory()) {
 
-				if (null == folder)
-					getFiles(fileList[p], files, fileExtension, folder);
+				if (null == folder) getFiles(fileList[p], files, fileExtension, folder);
 
 				else {
 					String formatPath = fileList[p].getPath().replaceAll("\\\\", "/");
-					if (formatPath.endsWith("/" + folder) == false)
-						getFiles(fileList[p], files, fileExtension, folder);
+					if (formatPath.endsWith("/" + folder) == false) getFiles(fileList[p], files, fileExtension, folder);
 				}
 			}
 
@@ -57,16 +53,13 @@ public class FileUtils$Get {
 				String fileName = fileList[p].getName();
 
 				/* no filter */
-				if (fileExtension == null || fileExtension.compareTo("*") == 0)
-					files.add(fileList[p]);
+				if (fileExtension == null || fileExtension.compareTo("*") == 0) files.add(fileList[p]);
 
 				/* filter extension */
-				else if (fileName.toLowerCase().endsWith("." + fileExtension.toLowerCase()))
-					files.add(fileList[p]);
+				else if (fileName.toLowerCase().endsWith("." + fileExtension.toLowerCase())) files.add(fileList[p]);
 
 				/* filter empty extension */
-				else if (fileExtension.compareTo("") == 0 && fileName.contains(".") == false)
-					files.add(fileList[p]);
+				else if (fileExtension.compareTo("") == 0 && fileName.contains(".") == false) files.add(fileList[p]);
 			}
 		}
 	}
@@ -91,7 +84,7 @@ public class FileUtils$Get {
 
 		return list;
 	}
-	
+
 	private static void getFilesFromPath(List<File> list, File file) {
 		if (file.isDirectory()) {
 			for (File child : file.listFiles()) {
@@ -101,7 +94,7 @@ public class FileUtils$Get {
 			list.add(file);
 		}
 	}
-	
+
 	public static List<File> getFilesFromPath(String path) {
 		List<File> list = new ArrayList<File>();
 

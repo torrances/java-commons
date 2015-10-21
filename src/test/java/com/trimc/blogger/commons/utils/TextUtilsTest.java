@@ -15,7 +15,7 @@ public final class TextUtilsTest {
 
 		assertTrue(TextUtils.containsPunctuationExcept("stephen maturin!", ' '));
 	}
-	
+
 	@Test
 	public void isAlphaPunctuationOnly() throws Throwable {
 		assertTrue(TextUtils.isAlphaPunctuationOnly("jack"));

@@ -4,13 +4,13 @@ import com.trimc.blogger.commons.LogManager;
 
 public class BusinessException extends Exception {
 
-	static LogManager			logger				= new LogManager(BusinessException.class);
+	static LogManager logger = new LogManager(BusinessException.class);
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long serialVersionUID = 1L;
 
-	private String				message;
+	private String message;
 
-	private Object[]			params;
+	private Object[] params;
 
 	public BusinessException(Exception e) {
 		logger.error(e);

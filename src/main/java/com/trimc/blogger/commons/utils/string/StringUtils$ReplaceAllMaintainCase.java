@@ -12,8 +12,7 @@ public class StringUtils$ReplaceAllMaintainCase {
 		String _key = key.toLowerCase();
 
 		int x = _line.indexOf(_key);
-		if (x == -1)
-			return line;
+		if (x == -1) return line;
 
 		int y = x + _key.length();
 

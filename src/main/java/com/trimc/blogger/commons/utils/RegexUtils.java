@@ -6,9 +6,9 @@ import java.util.List;
 
 public final class RegexUtils {
 
-	private static final String	ANY_WORD	= "([a-z]+)";
+	private static final String ANY_WORD = "([a-z]+)";
 
-	private static final String	SPACE		= "([\\s])";
+	private static final String SPACE = "([\\s])";
 
 	public static String normalizeRanges(String input) {
 		if (!input.contains("%")) return input;

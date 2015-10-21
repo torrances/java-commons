@@ -20,7 +20,7 @@ public enum EngGrammarMetaType {
 
 	PUNCTUATION("Punctuation");
 
-	public static LogManager	logger	= new LogManager(EngGrammarMetaType.class);
+	public static LogManager logger = new LogManager(EngGrammarMetaType.class);
 
 	public static EngGrammarMetaType find(String name) {
 		for (EngGrammarMetaType value : EngGrammarMetaType.values()) {
@@ -33,7 +33,7 @@ public enum EngGrammarMetaType {
 		return null;
 	}
 
-	private String	name;
+	private String name;
 
 	private EngGrammarMetaType(String name) {
 		setName(name);
