@@ -17,8 +17,13 @@ public final class EngGrammarUpperTypeAdapter {
 
 		if ("n".equals(tag))
 			return EngGrammarUpperType.NOUN;
+		if ("n.".equals(tag))
+			return EngGrammarUpperType.NOUN;
+		if ("n.2".equals(tag))
+			return EngGrammarUpperType.NOUN;
 		else if ("v".equals(tag))
 			return EngGrammarUpperType.VERB;
+		
 
 		throw new AdapterValidationException("Unrecognized Abbreviation (tag = %s)", tag);
 	}

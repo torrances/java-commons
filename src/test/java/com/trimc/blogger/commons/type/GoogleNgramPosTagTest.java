@@ -1,4 +1,4 @@
-package com.trimc.blogger.commons;
+package com.trimc.blogger.commons.type;
 
 import static org.junit.Assert.assertEquals;
 

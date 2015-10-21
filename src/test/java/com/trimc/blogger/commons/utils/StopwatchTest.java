@@ -1,10 +1,11 @@
-package com.trimc.blogger.commons;
+package com.trimc.blogger.commons.utils;
 
 import static org.junit.Assert.assertTrue;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import com.trimc.blogger.commons.LogManager;
 import com.trimc.blogger.commons.utils.Stopwatch;
 
 public final class StopwatchTest {
