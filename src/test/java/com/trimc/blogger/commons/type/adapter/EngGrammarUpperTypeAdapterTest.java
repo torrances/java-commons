@@ -10,7 +10,7 @@ import com.trimc.blogger.commons.type.adapter.EngGrammarUpperTypeAdapter;
 public final class EngGrammarUpperTypeAdapterTest {
 
 	@Test
-	public void findByAbbreviation(String tag) throws Throwable {
+	public void findByAbbreviation() throws Throwable {
 		assertEquals(EngGrammarUpperType.NOUN, EngGrammarUpperTypeAdapter.findByAbbreviation("n."));
 	}
 }
