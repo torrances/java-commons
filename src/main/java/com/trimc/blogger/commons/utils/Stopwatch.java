@@ -1,6 +1,7 @@
 package com.trimc.blogger.commons.utils;
 
 import com.trimc.blogger.commons.LogManager;
+import com.trimc.blogger.commons.utils.string.StringUtils;
 
 public class Stopwatch {
 

@@ -1,7 +1,4 @@
-package com.trimc.blogger.commons.utils;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+package com.trimc.blogger.commons.utils.string;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -12,13 +9,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
-
-import org.junit.Test;
 
 import com.trimc.blogger.commons.LogManager;
 import com.trimc.blogger.commons.exception.BusinessException;
@@ -26,10 +18,11 @@ import com.trimc.blogger.commons.type.Codepage;
 
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
-	public static LogManager	logger	= new LogManager(StringUtils.class);
+	public static LogManager logger = new LogManager(StringUtils.class);
 
 	public static String cleanseAmpersands(String input) {
-		if (!StringUtils.hasValue(input)) return input;
+		if (!StringUtils.hasValue(input))
+			return input;
 
 		input = input.replaceAll("&amp;", "&");
 		input = input.replaceAll("&", "&amp;");
@@ -38,44 +31,19 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	}
 
 	public static String format(Object value) {
-		return format(value, "###,###.###");
+		return StringUtils$Format.format(value);
 	}
 
 	public static String format(Object value, String format) {
-		return new DecimalFormat(format).format(value);
+		return StringUtils$Format.format(value, format);
 	}
 
 	public static String format(String value, Object... args) {
-		return (value.contains("%s")) ? String.format(value, args) : value;
+		return StringUtils$Format.format(value, args);
 	}
 
 	public static String formatPct(String value) {
-
-		if ("0".equals(value)) return "0";
-		else if ("1".equals(value)) return "100";
-
-		if (value.startsWith("0.")) {
-			value = substringAfter(value, "0.");
-
-			if (value.length() < 2) {
-				if (1 == value.length()) value = value.concat("0.00");
-				else value = value.concat(".00");
-			}
-
-			else {
-
-				while (value.length() < 4)
-					value = value.concat("0");
-
-				value = value.substring(0, 2).concat(".").concat(value.substring(2, 4));
-			}
-		}
-
-		// remove leading zeros
-		while (value.startsWith("0"))
-			value = value.substring(1);
-
-		return value;
+		return StringUtils$Format.formatPct(value);
 	}
 
 	public static int getMatchIndex(String text, String[] stoppers, boolean caseSensitive) {
@@ -122,24 +90,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		return pad(x, places, "0");
 	}
 
-	/**
-	 * proper sorting requires padded values 6 => 00006 31 => 00031 100 => 00100
-	 * 
-	 * otherwise java would sort this as descending (large to small): 6 31 100
-	 * 
-	 * and ascending (small to large): 100 31 6
-	 * 
-	 * @param x
-	 * @param places
-	 * @return a padded value
-	 */
 	public static String pad(int x, int places, String padding) {
-		String value = String.valueOf(x);
-
-		while (value.length() < places)
-			value = padding.concat(value);
-
-		return value;
+		return StringUtils$Pad.pad(x, places, padding);
 	}
 
 	public static String pad(Object x, int places) {
@@ -150,38 +102,12 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		return pad(x.toString(), places, padding);
 	}
 
-	/*public static String pad(String x, int places) {
-		try {
-
-			String value = String.valueOf(x);
-			while (value.length() < places)
-				value = "0".concat(value);
-
-			return value;
-
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}*/
-
 	public static String pad(String x, int places) {
 		return pad(x, places, "0");
 	}
 
 	public static String pad(String x, int places, String padding) {
-		try {
-
-			String value = String.valueOf(x);
-			while (value.length() < places)
-				value = padding.concat(value);
-
-			return value;
-
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-			return null;
-		}
+		return StringUtils$Pad.pad(x, places, padding);
 	}
 
 	public static String replaceAllMaintainCase(String line, String key) {
@@ -189,29 +115,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	}
 
 	public static String replaceAllMaintainCase(String line, String key, String value) {
-
-		String _line = line.toLowerCase();
-		String _key = key.toLowerCase();
-
-		int x = _line.indexOf(_key);
-		if (x == -1) return line;
-
-		int y = x + _key.length();
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(line.substring(0, x));
-
-		sb.append(" ");
-		if (hasValue(value)) {
-			sb.append(value);
-			sb.append(" ");
-		}
-
-		sb.append(line.substring(y));
-
-		// System.err.println(line.substring(0, x) + "   -----    " +
-		// line.substring(y));
-		return trim(sb.toString());
+		return StringUtils$ReplaceAllMaintainCase.replaceAllMaintainCase(line, key, value);
 	}
 
 	public static void reset(InputStream inputStream) {
@@ -225,90 +129,27 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	}
 
 	public static Collection<String> split(String value, int length, boolean force) {
-		List<String> list = new ArrayList<String>();
-
-		int total = 0;
-		StringBuilder sb = new StringBuilder();
-
-		String[] tokens = value.split(" ");
-		for (int i = 0; i < tokens.length; i++) {
-
-			total += tokens[i].length();
-			sb.append(tokens[i] + " ");
-
-			if (total >= length) {
-				list.add(trim(sb.toString()));
-				sb = new StringBuilder();
-				total = 0;
-			}
-		}
-
-		list.add(sb.toString().trim());
-		return list;
+		return StringUtils$Split.split(value, length, force);
 	}
 
 	public static String substringAfter(String text, String... delims) {
-		for (String delimiter : delims) {
-			if (text.indexOf(delimiter) != -1) {
-				text = substringAfter(text, delimiter);
-			}
-		}
-
-		return text.trim();
+		return StringUtils$Substring.substringAfter(text, delims);
 	}
 
-	public static String substringAfter(String text, String del) {
-		String result = "";
-
-		if (text != null) {
-			int pos = text.indexOf(del);
-			if (pos != -1) {
-				if (pos < text.length()) {
-					result = text.substring(pos + del.length());
-				}
-			}
-		}
-
-		return result.trim();
+	public static String substringAfter(String text, String delim) {
+		return StringUtils$Substring.substringAfter(text, delim);
 	}
 
 	public static String substringAfterLast(String text, String delim) {
-		String returnStr = "";
-
-		if (text != null && text.length() > 0) {
-			int lastPos = text.lastIndexOf(delim);
-			if ((lastPos != -1) && (lastPos < text.length())) {
-				returnStr = text.substring(lastPos + delim.length());
-			}
-		}
-
-		return returnStr;
+		return StringUtils$Substring.substringAfterLast(text, delim);
 	}
 
-	public static String substringBefore(String text, String del) {
-		String result = "";
-
-		if (text != null) {
-			int pos = text.indexOf(del);
-			if (pos > 0) {
-				result = text.substring(0, pos);
-			}
-		}
-
-		return result;
+	public static String substringBefore(String text, String delim) {
+		return StringUtils$Substring.substringBefore(text, delim);
 	}
 
 	public static String substringBeforeLast(String text, String delim) {
-		String returnStr = "";
-
-		if (text != null && text.length() > 0) {
-			int lastPos = text.lastIndexOf(delim);
-			if ((lastPos != -1) && (lastPos > 0)) {
-				returnStr = text.substring(0, lastPos);
-			}
-		}
-
-		return returnStr.trim();
+		return StringUtils$Substring.substringBeforeLast(text, delim);
 	}
 
 	public static String tabs(int count) {
@@ -352,7 +193,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		Iterator<?> iter = collection.iterator();
 		while (iter.hasNext()) {
 			sb.append(iter.next());
-			if (iter.hasNext()) sb.append(delimiter);
+			if (iter.hasNext())
+				sb.append(delimiter);
 		}
 
 		return sb.toString();
@@ -389,12 +231,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		return line.trim();
 	}
 
-	@Test
-	public void split() throws Throwable {
-		String input = "microbial influenced corrosion and underdeposit corrosion";
-		Collection<String> l1 = split(input, 25, false);
-		assertNotNull(l1);
-		assertEquals(2, l1.size());
+	public static char unicodeNormalization(char ch) {
+		return StringUtils$UnicodeNormalization.unicodeNormalization(ch);
 	}
 
+	public static String unicodeNormalization(String text) {
+		return StringUtils$UnicodeNormalization.unicodeNormalization(text);
+	}
 }

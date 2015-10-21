@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.trimc.blogger.commons.LogManager;
+import com.trimc.blogger.commons.utils.string.StringUtils;
 
 public final class LogUtils {
 

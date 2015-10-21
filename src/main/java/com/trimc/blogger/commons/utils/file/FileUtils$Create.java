@@ -16,7 +16,7 @@ import com.trimc.blogger.commons.LogManager;
 import com.trimc.blogger.commons.exception.BusinessException;
 import com.trimc.blogger.commons.type.Codepage;
 import com.trimc.blogger.commons.utils.Stopwatch;
-import com.trimc.blogger.commons.utils.StringUtils;
+import com.trimc.blogger.commons.utils.string.StringUtils;
 
 public class FileUtils$Create {
 

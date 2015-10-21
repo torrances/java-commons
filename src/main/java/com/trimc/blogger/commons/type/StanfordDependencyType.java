@@ -1,7 +1,7 @@
 package com.trimc.blogger.commons.type;
 
 import com.trimc.blogger.commons.LogManager;
-import com.trimc.blogger.commons.utils.StringUtils;
+import com.trimc.blogger.commons.utils.string.StringUtils;
 
 public enum StanfordDependencyType {
 

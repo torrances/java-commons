@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.trimc.blogger.commons.utils.string.StringUtils;
+
 public final class MapUtils {
 
 	public static void add2Map(Map<String, String> map, Map<String, String> _map) {

@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.trimc.blogger.commons.utils.string.StringUtils;
+
 public final class SetUtils {
 
 	public static boolean memberOf(char value, char... chs) {
