@@ -12,8 +12,12 @@ public class StringUtils$UnicodeNormalization {
 			return 'a';
 		if ('ã' == ch)
 			return 'a';
+		if ('â' == ch)
+			return 'a';
 
 		if ('é' == ch)
+			return 'e';
+		if ('ê' == ch)
 			return 'e';
 
 		if ('í' == ch)
@@ -23,6 +27,10 @@ public class StringUtils$UnicodeNormalization {
 			return 'n';
 
 		if ('ó' == ch)
+			return 'o';
+		if ('ô' == ch)
+			return 'o';
+		if ('õ' == ch)
 			return 'o';
 
 		if ('ú' == ch)

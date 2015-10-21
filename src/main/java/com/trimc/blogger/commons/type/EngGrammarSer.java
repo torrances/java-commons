@@ -4,13 +4,17 @@ import com.google.gson.annotations.Expose;
 
 public class EngGrammarSer {
 
-	@Expose private String	longName;
+	@Expose
+	private String longName;
 
-	@Expose private String	metaType;
+	@Expose
+	private String metaType;
 
-	@Expose private String[]	tags;
+	@Expose
+	private String[] tags;
 
-	@Expose private String	upperType;
+	@Expose
+	private String upperType;
 
 	public String getLongName() {
 		return longName;
