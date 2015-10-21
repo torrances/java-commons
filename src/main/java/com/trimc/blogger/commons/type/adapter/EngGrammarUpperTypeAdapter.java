@@ -55,6 +55,8 @@ public final class EngGrammarUpperTypeAdapter {
 		else if ("n.3".equals(tag)) return EngGrammarUpperType.NOUN;
 		else if ("n.4".equals(tag)) return EngGrammarUpperType.NOUN;
 		else if ("n.5".equals(tag)) return EngGrammarUpperType.NOUN;
+		else if ("n.6".equals(tag)) return EngGrammarUpperType.NOUN;
+		else if ("n.7".equals(tag)) return EngGrammarUpperType.NOUN;
 
 		else if ("prep".equals(tag)) return EngGrammarUpperType.PREPOSITION;
 		else if ("prep.".equals(tag)) return EngGrammarUpperType.PREPOSITION;
