@@ -95,9 +95,8 @@ public final class SetUtils {
 	public static List<String> toList(String... values) {
 		List<String> list = new ArrayList<String>();
 
-		for (String value : values) {
+		for (String value : values)
 			list.add(value.trim());
-		}
 
 		return list;
 	}
