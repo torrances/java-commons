@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.trimc.blogger.commons.dto.KeyValue;
+import com.trimc.blogger.commons.exception.BusinessException;
 import com.trimc.blogger.commons.utils.string.StringUtils;
 
 public final class MapUtils {
@@ -37,6 +39,14 @@ public final class MapUtils {
 		Set<String> set = map.containsKey(key) ? map.get(key) : new TreeSet<String>();
 		set.add(value);
 		map.put(key, set);
+	}
+
+	public static KeyValue<Object, Integer>[] asc(Map<?, ?> map) throws BusinessException {
+		return MapUtils$Sort.asc(map);
+	}
+
+	public static KeyValue<Object, Integer>[] desc(Map<?, ?> map) throws BusinessException {
+		return MapUtils$Sort.desc(map);
 	}
 
 	public static String toString1(Map<?, ?> map, String delimiter) {

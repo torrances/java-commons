@@ -34,6 +34,7 @@ public final class EngGrammarUpperTypeAdapter {
 		if ("adj.".equals(tag)) return EngGrammarUpperType.ADJECTIVE;
 		if ("adj.1".equals(tag)) return EngGrammarUpperType.ADJECTIVE;
 		if ("adj.2".equals(tag)) return EngGrammarUpperType.ADJECTIVE;
+		if ("adj.3".equals(tag)) return EngGrammarUpperType.ADJECTIVE;
 
 		else if ("adv".equals(tag)) return EngGrammarUpperType.ADVERB;
 		else if ("adv.".equals(tag)) return EngGrammarUpperType.ADVERB;
@@ -57,6 +58,11 @@ public final class EngGrammarUpperTypeAdapter {
 		else if ("n.5".equals(tag)) return EngGrammarUpperType.NOUN;
 		else if ("n.6".equals(tag)) return EngGrammarUpperType.NOUN;
 		else if ("n.7".equals(tag)) return EngGrammarUpperType.NOUN;
+		else if ("n.8".equals(tag)) return EngGrammarUpperType.NOUN;
+		else if ("n.9".equals(tag)) return EngGrammarUpperType.NOUN;
+		else if ("n.10".equals(tag)) return EngGrammarUpperType.NOUN;
+		else if ("n.11".equals(tag)) return EngGrammarUpperType.NOUN;
+		else if ("n.12".equals(tag)) return EngGrammarUpperType.NOUN;
 
 		else if ("prep".equals(tag)) return EngGrammarUpperType.PREPOSITION;
 		else if ("prep.".equals(tag)) return EngGrammarUpperType.PREPOSITION;
@@ -71,10 +77,20 @@ public final class EngGrammarUpperTypeAdapter {
 		else if ("pron.4".equals(tag)) return EngGrammarUpperType.PRONOUN;
 		else if ("pron.5".equals(tag)) return EngGrammarUpperType.PRONOUN;
 
+		else if ("phr".equals(tag)) return EngGrammarUpperType.PHRASE;
+		else if ("phr.".equals(tag)) return EngGrammarUpperType.PHRASE;
+		else if ("phr.1".equals(tag)) return EngGrammarUpperType.PHRASE;
+		else if ("phr.2".equals(tag)) return EngGrammarUpperType.PHRASE;
+
 		else if ("prefix".equals(tag)) return EngGrammarUpperType.OTHER;
 		else if ("prefix1".equals(tag)) return EngGrammarUpperType.OTHER;
+		else if ("prefix2".equals(tag)) return EngGrammarUpperType.OTHER;
+		else if ("prefix3".equals(tag)) return EngGrammarUpperType.OTHER;
+
 		else if ("suffix".equals(tag)) return EngGrammarUpperType.OTHER;
 		else if ("suffix1".equals(tag)) return EngGrammarUpperType.OTHER;
+		else if ("suffix2".equals(tag)) return EngGrammarUpperType.OTHER;
+		else if ("suffix3".equals(tag)) return EngGrammarUpperType.OTHER;
 
 		else if ("v".equals(tag)) return EngGrammarUpperType.VERB;
 		else if ("v.".equals(tag)) return EngGrammarUpperType.VERB;
@@ -85,6 +101,8 @@ public final class EngGrammarUpperTypeAdapter {
 		else if ("v.5".equals(tag)) return EngGrammarUpperType.VERB;
 
 		else if ("comb. form".equals(tag)) return EngGrammarUpperType.OTHER;
+		else if ("comb. form1".equals(tag)) return EngGrammarUpperType.OTHER;
+		else if ("comb. form2".equals(tag)) return EngGrammarUpperType.OTHER;
 
 		return null;
 	}

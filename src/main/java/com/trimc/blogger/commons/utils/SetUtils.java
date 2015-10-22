@@ -34,7 +34,7 @@ public final class SetUtils {
 	}
 
 	public static boolean memberOfCaseInsensitive(String value, Collection<String> tokens) {
-		return memberOfCaseInsensitive(value, toArray(tokens));
+		return memberOfCaseInsensitive(value, toArray1(tokens));
 	}
 
 	public static boolean memberOfCaseInsensitive(String value, String... tokens) {
@@ -69,8 +69,17 @@ public final class SetUtils {
 		return list;
 	}
 
-	public static String[] toArray(Collection<String> collection) {
+	public static String[] toArray1(Collection<String> collection) {
 		return (String[]) collection.toArray(new String[collection.size()]);
+	}
+
+	public static Object[] toArray2(Collection<Object> collection) {
+		Set<Object> set = new TreeSet<Object>();
+
+		for (Object obj : collection)
+			set.add(obj);
+
+		return (Object[]) set.toArray(new Object[set.size()]);
 	}
 
 	public static List<String> toList(Iterable<String> iterable) {
