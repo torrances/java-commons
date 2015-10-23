@@ -73,6 +73,14 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 		return null != input && trim(input).length() > 0;
 	}
 
+	public static boolean hasValue(StringBuffer sb) {
+		return hasValue(sb.toString());
+	}
+
+	public static boolean hasValue(StringBuilder sb) {
+		return hasValue(sb.toString());
+	}
+
 	public static boolean match(String text, String[] stoppers, boolean caseSensitive) {
 		return getMatchIndex(text, stoppers, caseSensitive) != -1;
 	}
