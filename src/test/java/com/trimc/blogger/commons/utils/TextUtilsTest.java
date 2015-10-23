@@ -12,8 +12,13 @@ public final class TextUtilsTest {
 	public void containsPunctuationExcept() throws Throwable {
 		assertFalse(TextUtils.containsPunctuationExcept("stephenmaturin", ' '));
 		assertFalse(TextUtils.containsPunctuationExcept("stephen maturin", ' '));
-
 		assertTrue(TextUtils.containsPunctuationExcept("stephen maturin!", ' '));
+	}
+	
+	@Test
+	public void endsWithPunctuation() throws Throwable {
+		assertTrue(TextUtils.endsWithPunctuation("natividad!"));
+		assertFalse(TextUtils.endsWithPunctuation("cacafuego"));
 	}
 
 	@Test
@@ -21,7 +26,6 @@ public final class TextUtilsTest {
 		assertTrue(TextUtils.isAlphaPunctuationOnly("jack"));
 		assertTrue(TextUtils.isAlphaPunctuationOnly("jack aubrey"));
 		assertTrue(TextUtils.isAlphaPunctuationOnly("jack "));
-
 		assertFalse(TextUtils.isAlphaPunctuationOnly("jack 3"));
 	}
 }

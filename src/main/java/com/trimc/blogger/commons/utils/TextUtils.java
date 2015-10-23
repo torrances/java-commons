@@ -99,6 +99,11 @@ public class TextUtils {
 		return total;
 	}
 
+	public static boolean endsWithPunctuation(String value) {
+		if (!StringUtils.hasValue(value)) return false;
+		return memberOfCharSet(value.toCharArray()[value.length() - 1], PUNCTUATION_CHARS);
+	}
+
 	public static boolean isAlpha(char ch) {
 		return memberOfCharSet(ch, ALPHA_CHARS_UPPER) || memberOfCharSet(ch, ALPHA_CHARS_LOWER);
 	}

@@ -31,11 +31,15 @@ public final class RegexUtils {
 		/*
 		 * required normalization:
 		 * 
-		 * normalize this pattern: the <token> and <token> <types> becomes the
-		 * <token> <type> and the <token> <type>
+		 * normalize this pattern: 
+		 * 		the <token> and <token> <types> 
+		 * becomes the
+		 * 		<token> <type> and the <token> <type>
 		 * 
-		 * for example the arkoma and anadarko basins becomes the arkoma basin
-		 * and the anadarko basin
+		 * for example:
+		 * 		"the arkoma and anadarko basins"
+		 * becomes 
+		 * 		"the arkoma basin and the anadarko basin"
 		 */
 
 		StringBuilder sb = new StringBuilder();
@@ -51,7 +55,6 @@ public final class RegexUtils {
 		sb.append("([a-z]+)"); /* group 10 */
 		sb.append("([s])"); /* group 111 */
 
-		// System.err.println(sb.toString());
 		input = input.replaceAll(sb.toString(), "the $3 $10 and the $8 $10");
 
 		return input;
