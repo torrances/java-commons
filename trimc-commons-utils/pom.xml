@@ -7,7 +7,7 @@
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>java-common</name>
+	<name>Java Common Utils</name>
 	<url>http://maven.apache.org</url>
 	<inceptionYear>2015</inceptionYear>
 	<description>Common Utils for Java Projects</description>

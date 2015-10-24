@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.trimc.blogger.commons.build</groupId>
-	<artifactId>trimc-commons-build</artifactId>
+	<groupId>trimc-commons</groupId>
+	<artifactId>trimc-commons</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<url />
-	<name>Commons Builder</name>
+	<name>POM Builder</name>
 	<inceptionYear>2015</inceptionYear>
 	<description>Commons Builder</description>
 

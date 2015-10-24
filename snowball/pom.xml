@@ -7,7 +7,7 @@
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>Eng Snowball Stemmer</name>
+	<name>Snowball Stemmer (English Only)</name>
 	<inceptionYear>2014</inceptionYear>
 	<description>Wrapper and modifications for org.tartarus.snowball</description>
 	<url>http://snowball.tartarus.org/</url>
