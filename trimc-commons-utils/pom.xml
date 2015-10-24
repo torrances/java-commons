@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.trimc.blogger.commons.utils</groupId>
+	<artifactId>trimc-commons-utils</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>java-common</name>
+	<url>http://maven.apache.org</url>
+	<inceptionYear>2015</inceptionYear>
+	<description>Common Utils for Java Projects</description>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<inherited>true</inherited>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<xerces.version>2.11.0</xerces.version>
+		<junit.version>4.12-beta-1</junit.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons-lang.version>3.3.2</commons-lang.version>
+		<gson.version>2.3</gson.version>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>slf4j-bom</groupId>
+			<artifactId>slf4j-bom</artifactId>
+			<version>1.0.0</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>${xerces.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${gson.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>
