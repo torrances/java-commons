@@ -9,7 +9,7 @@ import java.util.TreeMap;
 import org.junit.Test;
 
 import com.trimc.blogger.commons.dto.KeyValue;
-import com.trimc.blogger.commons.utils.file.MapUtils;
+import com.trimc.blogger.commons.utils.map.MapUtils;
 
 public final class MapUtilsTest {
 

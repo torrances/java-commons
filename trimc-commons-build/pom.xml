@@ -38,6 +38,11 @@
 			<artifactId>trimc-commons-utils</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.tartarus.snowball</groupId>
+			<artifactId>snowball</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 </project>

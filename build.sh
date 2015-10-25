@@ -1,1 +1,1 @@
-pushd trimc-commons-build && mvn clean install && popd
+pushd trimc-commons-build 	&& mvn clean install 	&& popd

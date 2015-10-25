@@ -1,4 +1,4 @@
-package com.trimc.blogger.commons.utils.file;
+package com.trimc.blogger.commons.utils.map;
 
 import java.util.Collection;
 import java.util.Map;
