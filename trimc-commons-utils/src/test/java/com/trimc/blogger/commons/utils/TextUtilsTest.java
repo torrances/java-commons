@@ -22,6 +22,14 @@ public final class TextUtilsTest {
 	}
 
 	@Test
+	public void isAlphaOnly() throws Throwable {
+		assertFalse(TextUtils.isAlphaOnly("placental mammal"));
+		assertTrue(TextUtils.isAlphaOnly("placentalmammal"));
+		assertTrue(TextUtils.isAlphaOnly("placental mammal", ' '));
+		assertFalse(TextUtils.isAlphaOnly("placental_mammal", ' '));
+	}
+	
+	@Test
 	public void isAlphaPunctuationOnly() throws Throwable {
 		assertTrue(TextUtils.isAlphaPunctuationOnly("jack"));
 		assertTrue(TextUtils.isAlphaPunctuationOnly("jack aubrey"));

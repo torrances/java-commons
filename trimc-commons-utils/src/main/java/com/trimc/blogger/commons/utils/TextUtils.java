@@ -228,6 +228,15 @@ public class TextUtils {
 		return true;
 	}
 
+	public static boolean isAlphaOnly(String value, char ...exceptions) {
+		for (char ch : value.toCharArray()) {
+			if (isAlpha(ch)) continue;
+			if (memberOfCharSet(ch, exceptions)) continue;
+			return false;
+		}
+		return true;
+	}
+
 	public static boolean isAlphaOther(String value) {
 		boolean isOther = false, isAlpha = false;
 
