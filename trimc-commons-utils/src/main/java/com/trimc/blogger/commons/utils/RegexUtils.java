@@ -107,9 +107,16 @@ public final class RegexUtils {
 		/*
 		 * now focus on XY. patterns eg. mr. => mr_DOT_
 		 * (contains XY.)
+		 * 
+		 * 	NOTE:
+		 * 	6-Jan-2015	ctrim
+		 * 	this is a very naive implementation
+		 * 	given input like this 'that was it. said my friend'
+		 * 	the regexp creates 'what was it_DOT_ said my friend'
 		 */
-		if (!input.endsWith(".")) input = input.replaceAll("\\s([A-Za-z])([A-Za-z])([\\.])", "$1$2_DOT_");
+		if (!input.endsWith(".")) input = input.replaceAll("\\s([A-Za-z])([A-Za-z])([\\.])", " $1$2_DOT_");
 		input = (!original.equals(input)) ? useDotNotationForAbbreviations(input) : input;
+		input = input.replaceAll("it_DOT_", "it\\."); // hacky: see note above
 
 		return input;
 	}
