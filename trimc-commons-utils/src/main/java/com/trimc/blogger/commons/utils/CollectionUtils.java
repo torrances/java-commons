@@ -16,22 +16,13 @@ public class CollectionUtils {
 		return reversed;
 	}
 
-	public static Collection<String> toLowerCase(Collection<String> collection) {
-		List<String> master = new ArrayList<String>();
+	public static Collection<String> toCollection(String... lines) {
+		List<String> list = new ArrayList<String>();
 
-		for (String value : collection)
-			master.add(value.toLowerCase());
+		for (String line : lines)
+			list.add(line);
 
-		return master;
-	}
-
-	public static Collection<String> toUpperCase(Collection<String> collection) {
-		List<String> master = new ArrayList<String>();
-
-		for (String value : collection)
-			master.add(value.toUpperCase());
-
-		return master;
+		return list;
 	}
 
 	public static List<String> toList(Collection<String> collection) {
@@ -50,5 +41,23 @@ public class CollectionUtils {
 			list.addAll(toList(collection));
 
 		return list;
+	}
+
+	public static Collection<String> toLowerCase(Collection<String> collection) {
+		List<String> master = new ArrayList<String>();
+
+		for (String value : collection)
+			master.add(value.toLowerCase());
+
+		return master;
+	}
+
+	public static Collection<String> toUpperCase(Collection<String> collection) {
+		List<String> master = new ArrayList<String>();
+
+		for (String value : collection)
+			master.add(value.toUpperCase());
+
+		return master;
 	}
 }
