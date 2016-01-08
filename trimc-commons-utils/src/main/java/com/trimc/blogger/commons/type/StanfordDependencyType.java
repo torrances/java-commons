@@ -63,6 +63,8 @@ public enum StanfordDependencyType {
 
 	CASE("case", "case", false, UpperDependencyType.OTHER, "unknown"),
 
+	NMOD("nmod", "nominal modifier dependency", false, UpperDependencyType.OTHER, "If there exist the relations case(hat, in) and nmod(in, hat) then the nmod relation is enhanced to nmod:in(cat, hat). The case(hat, in) relation is preserved."),
+
 	NPADVMOD("npadvmod", "noun phrase as adverbial modifier", false, UpperDependencyType.OTHER, "This relation captures various places where something syntactically a noun phrase (NP) is used as an adverbial modifier in a sentence."),
 
 	NSUBJ("nsubj", "nominal subject", false, UpperDependencyType.OTHER, "A nominal subject is a noun phrase which is the syntactic subject of a clause."),
