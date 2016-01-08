@@ -242,6 +242,8 @@ public enum StanfordDependencyType {
 		if (name.toLowerCase().startsWith("prepc_")) return PREPC;
 		if (name.toLowerCase().startsWith("conj_")) return CONJ;
 
+		if (name.contains(":")) return findByName(StringUtils.substringBefore(name, ":"));
+
 		logger.error("Dependency Predicate Not Recognized (name = %s)", name);
 		return null;
 	}
