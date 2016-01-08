@@ -61,6 +61,8 @@ public enum StanfordDependencyType {
 
 	COMPOUND("compound", "compound", false, UpperDependencyType.OTHER, "unknown"),
 
+	CASE("case", "case", false, UpperDependencyType.OTHER, "unknown"),
+
 	NPADVMOD("npadvmod", "noun phrase as adverbial modifier", false, UpperDependencyType.OTHER, "This relation captures various places where something syntactically a noun phrase (NP) is used as an adverbial modifier in a sentence."),
 
 	NSUBJ("nsubj", "nominal subject", false, UpperDependencyType.OTHER, "A nominal subject is a noun phrase which is the syntactic subject of a clause."),
