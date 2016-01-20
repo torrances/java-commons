@@ -227,6 +227,18 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
 	public static String trim(String line) {
 
+		while (line.contains("\r\n")) {
+			line = line.replaceAll("\r\n", " ");
+		}
+
+		while (line.contains("\r")) {
+			line = line.replaceAll("\r", " ");
+		}
+
+		while (line.contains(System.lineSeparator())) {
+			line = line.replaceAll(System.lineSeparator(), " ");
+		}
+
 		while (line.contains("  "))
 			line = line.replaceAll("  ", " ");
 

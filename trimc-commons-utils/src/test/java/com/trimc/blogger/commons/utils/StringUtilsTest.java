@@ -29,8 +29,15 @@ public final class StringUtilsTest {
 	}
 
 	@Test
-	public void trim() throws Throwable {
+	public void trim1() throws Throwable {
 		String t1 = " hello   world  ";
+		assertEquals("hello world", StringUtils.trim(t1));
+	}
+
+	@Test
+	public void trim2() throws Throwable {
+		String t1 = " hello \n"
+				+ "  world  ";
 		assertEquals("hello world", StringUtils.trim(t1));
 	}
 }
