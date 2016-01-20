@@ -228,7 +228,7 @@ public class TextUtils {
 		return true;
 	}
 
-	public static boolean isAlphaOnly(String value, char ...exceptions) {
+	public static boolean isAlphaOnly(String value, char... exceptions) {
 		for (char ch : value.toCharArray()) {
 			if (isAlpha(ch)) continue;
 			if (memberOfCharSet(ch, exceptions)) continue;
@@ -496,6 +496,21 @@ public class TextUtils {
 
 		for (char ch : value.toCharArray()) {
 			if (isPunctuation(ch) && !memberOfCharSet(ch, exceptions)) continue;
+			sb.append(String.valueOf(ch));
+		}
+
+		return sb.toString();
+	}
+
+	public static String removeSpecialCharacters(String value) {
+		return removeSpecialCharactersExcept(value, new char[] {});
+	}
+
+	public static String removeSpecialCharactersExcept(String value, char... exceptions) {
+		StringBuilder sb = new StringBuilder();
+
+		for (char ch : value.toCharArray()) {
+			if (isSpecial(ch) && !memberOfCharSet(ch, exceptions)) continue;
 			sb.append(String.valueOf(ch));
 		}
 
