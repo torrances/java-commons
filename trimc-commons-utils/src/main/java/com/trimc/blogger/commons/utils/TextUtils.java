@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -503,19 +504,19 @@ public class TextUtils {
 	}
 
 	public static String removeSpecialCharacters(String value) {
-		return removeSpecialCharactersExcept(value, new char[] {});
+		return StringUtils.trim(Normalizer.normalize(value, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
 	}
 
-	public static String removeSpecialCharactersExcept(String value, char... exceptions) {
-		StringBuilder sb = new StringBuilder();
-
-		for (char ch : value.toCharArray()) {
-			if (isSpecial(ch) && !memberOfCharSet(ch, exceptions)) continue;
-			sb.append(String.valueOf(ch));
-		}
-
-		return sb.toString();
-	}
+	//	public static String removeSpecialCharactersExcept(String value, char... exceptions) {
+	//		StringBuilder sb = new StringBuilder();
+	//
+	//		for (char ch : value.toCharArray()) {
+	//			if (isSpecial(ch) && !memberOfCharSet(ch, exceptions)) continue;
+	//			sb.append(String.valueOf(ch));
+	//		}
+	//
+	//		return sb.toString();
+	//	}
 
 	public static boolean startsWithAlpha(String value) {
 		if (!StringUtils.hasValue(value)) return false;

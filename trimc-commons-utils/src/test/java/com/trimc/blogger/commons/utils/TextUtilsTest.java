@@ -1,11 +1,12 @@
 package com.trimc.blogger.commons.utils;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.text.Normalizer;
 
 import org.junit.Test;
-
-import com.trimc.blogger.commons.utils.TextUtils;
-
+import static org.junit.Assert.*;
 public final class TextUtilsTest {
 
 	@Test
@@ -14,7 +15,7 @@ public final class TextUtilsTest {
 		assertFalse(TextUtils.containsPunctuationExcept("stephen maturin", ' '));
 		assertTrue(TextUtils.containsPunctuationExcept("stephen maturin!", ' '));
 	}
-	
+
 	@Test
 	public void endsWithPunctuation() throws Throwable {
 		assertTrue(TextUtils.endsWithPunctuation("natividad!"));
@@ -28,12 +29,17 @@ public final class TextUtilsTest {
 		assertTrue(TextUtils.isAlphaOnly("placental mammal", ' '));
 		assertFalse(TextUtils.isAlphaOnly("placental_mammal", ' '));
 	}
-	
+
 	@Test
 	public void isAlphaPunctuationOnly() throws Throwable {
 		assertTrue(TextUtils.isAlphaPunctuationOnly("jack"));
 		assertTrue(TextUtils.isAlphaPunctuationOnly("jack aubrey"));
 		assertTrue(TextUtils.isAlphaPunctuationOnly("jack "));
 		assertFalse(TextUtils.isAlphaPunctuationOnly("jack 3"));
+	}
+
+	@Test
+	public void removeSpecialCharacters() throws Throwable {
+		assertEquals("jumpsuit shop", TextUtils.removeSpecialCharacters("jumpsuit 😍💘 shop"));
 	}
 }
