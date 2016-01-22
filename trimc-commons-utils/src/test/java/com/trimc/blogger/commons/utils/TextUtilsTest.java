@@ -1,12 +1,10 @@
 package com.trimc.blogger.commons.utils;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import java.text.Normalizer;
-
 import org.junit.Test;
-import static org.junit.Assert.*;
 public final class TextUtilsTest {
 
 	@Test

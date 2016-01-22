@@ -58,6 +58,10 @@ public final class FileUtils {
 		FileUtils$Create.mergeIntoSingleFile(foldername, ext, codepage, output, enableLogging);
 	}
 
+	public static int numberOfLines(File file) throws BusinessException {
+		return FileUtils$Read.numberOfLines(file);
+	}
+
 	public static Collection<File> toCollection(File... files) {
 		List<File> list = new ArrayList<File>();
 
