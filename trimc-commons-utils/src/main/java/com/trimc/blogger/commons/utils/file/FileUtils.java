@@ -71,6 +71,14 @@ public final class FileUtils {
 		return list;
 	}
 
+	public static File toFile(Collection<String> list, File file, boolean append, Codepage codepage) throws BusinessException {
+		return toFile(StringUtils.toString(list, System.lineSeparator()), file.getAbsolutePath(), append, codepage);
+	}
+
+	public static File toFile(Collection<String> list, File file, Codepage codepage) throws BusinessException {
+		return toFile(StringUtils.toString(list, System.lineSeparator()), file.getAbsolutePath(), codepage);
+	}
+
 	public static File toFile(Collection<String> list, String filename, boolean append, Codepage codepage) throws BusinessException {
 		return toFile(StringUtils.toString(list, System.lineSeparator()), filename, append, codepage);
 	}
