@@ -41,6 +41,10 @@ public final class FileUtils {
 		return getFiles(Arrays.asList(paths));
 	}
 
+	public static List<File> getFilesFromPath(File file) {
+		return FileUtils$Get.getFilesFromPath(file.getAbsolutePath());
+	}
+
 	public static List<File> getFilesFromPath(String path) {
 		return FileUtils$Get.getFilesFromPath(path);
 	}
