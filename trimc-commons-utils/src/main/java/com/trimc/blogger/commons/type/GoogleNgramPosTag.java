@@ -92,7 +92,7 @@ public enum GoogleNgramPosTag {
 		if ("adjective".equalsIgnoreCase(tag)) return ADJECTIVE;
 		if (".".equalsIgnoreCase(tag)) return PUNCTUATION;
 
-		logger.debug("GoogleNgramPosTag value not recognized (tag = %s)", tag);
+		// logger.debug("GoogleNgramPosTag value not recognized (tag = %s)", tag);
 		return null;
 	}
 
@@ -109,7 +109,7 @@ public enum GoogleNgramPosTag {
 		return engGrammarUpperType;
 	}
 
-	private String getName() {
+	public String getName() {
 		return name;
 	}
 
