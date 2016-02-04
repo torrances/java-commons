@@ -51,6 +51,7 @@ public class FileUtils$Get {
 			else {
 
 				String fileName = fileList[p].getName();
+				if (fileName.equals(".DS_Store")) continue; // TODO: build up a list of exclusions
 
 				/* no filter */
 				if (fileExtension == null || fileExtension.compareTo("*") == 0) files.add(fileList[p]);
